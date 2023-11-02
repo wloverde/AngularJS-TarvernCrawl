@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TavernLocation } from '../tavern-location';
 
 @Component({
   selector: 'app-tavern-location',
