@@ -16,6 +16,7 @@ import { TavernLocation } from '../tavern-location';
     </section>
     <section class="results">
       <app-tavern-location
+        *ngFor="let tavernLocation of tavernLocationList"
         [tavernLocation]="tavernLocation"
       ></app-tavern-location>
     </section>
