@@ -7,9 +7,11 @@ import { TavernLocation } from '../tavern-location';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>
-      tavern-location works!
-    </p>
+<section class="listing">
+    <img class="listing-photo" [src]="tavernLocation.photo" alt="Exterior photo of {{tavernLocation.name}}">
+    <h2 class="listing-heading">{{ tavernLocation.name }}</h2>
+    <p class="listing-location">{{ tavernLocation.city}}, {{tavernLocation.kingdom }}</p>
+  </section>
   `,
   styleUrls: ['./tavern-location.component.css']
 })
