@@ -15,7 +15,7 @@ import { TavernLocation } from '../tavern-location';
       </form>
     </section>
     <section class="results">
-      <app-tavern-location></app-tavern-location>
+      <app-tavern-location [tavernLocation]='tavernLocation'></app-tavern-location>
     </section>
   `,
   styleUrls: ['./home.component.css'],
