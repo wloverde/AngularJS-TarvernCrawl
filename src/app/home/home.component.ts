@@ -6,7 +6,10 @@ import { TavernLocation } from '../tavern-location';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TavernLocationComponent],
+  imports: [
+    CommonModule, 
+    TavernLocationComponent
+  ],
   template: `
     <section>
       <form>
@@ -15,7 +18,7 @@ import { TavernLocation } from '../tavern-location';
       </form>
     </section>
     <section class="results">
-      <app-tavern-location></app-tavern-location>
+      <app-tavern-location [tavernLocation]='tavernLocation'></app-tavern-location>
     </section>
   `,
   styleUrls: ['./home.component.css'],
