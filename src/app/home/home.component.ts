@@ -6,7 +6,10 @@ import { TavernLocation } from '../tavern-location';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TavernLocationComponent],
+  imports: [
+    CommonModule, 
+    TavernLocationComponent
+  ],
   template: `
     <section>
       <form>
