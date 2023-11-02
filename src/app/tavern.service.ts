@@ -4,7 +4,7 @@ import { TavernLocation } from './tavern-location';
 @Injectable({
   providedIn: 'root'
 })
-export class LodgingService {
+export class TavernService {
   tavernLocationList: TavernLocation[] = [
     {
       id: 1,
@@ -191,12 +191,12 @@ export class LodgingService {
         'The Ironclad Inn is a dwarven tavern within the mountain stronghold of Karak Azgal. It’s known for its hearty ale and stone-carved decorations, a favorite spot for warriors and miners alike.',
     },
   ];
-  getAllLodgingLocations(): LodgingLocation[] {
+  getAllTavernLocations(): TavernLocation[] {
     return this.tavernLocationList;
   }
   
-  getLodgingLocationById(id: number): LodgingLocation | undefined {
-    return this.tavernLocationList.find(lodgingLocation => lodgingLocation.id === id);
+  getTavernLocationById(id: number): TavernLocation | undefined {
+    return this.tavernLocationList.find(tavernLocation => tavernLocation.id === id);
   }
   constructor() { }
 }
