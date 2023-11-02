@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TavernLocation } from '../tavern-location';
 
@@ -14,5 +14,6 @@ import { TavernLocation } from '../tavern-location';
   styleUrls: ['./tavern-location.component.css']
 })
 export class TavernLocationComponent {
-
+  @Input() tavernLocation!: TavernLocation;
 }
+
