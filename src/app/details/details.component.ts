@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { TavernService } from '../tavern.service';
 import { TavernLocation } from '../tavern-location';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
     <article>
       <img
@@ -39,10 +40,21 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   tavernService = inject(TavernService);
   tavernLocation: TavernLocation | undefined;
-
+  travelForm = new FormGroup({
+    partyName: new FormControl(''),
+    partySize: new FormControl(''),
+    longRest: new FormControl(''),
+  });
   constructor() {
     const tavernLocationId = Number(this.route.snapshot.params['id']);
     this.tavernLocation =
       this.tavernService.getTavernLocationById(tavernLocationId);
+  }
+  enterTavern() {
+    this.tavernService.enterTavern(
+      this.travelForm.value.partySize ?? '',
+      this.travelForm.value.longRest ?? '',
+      this.travelForm.value.partyName ?? ''
+    );
   }
 }

@@ -5,7 +5,7 @@ import { TavernLocation } from './tavern-location';
   providedIn: 'root'
 })
 export class TavernService {
-  enterTavern(partySize: number, longRest: boolean, partyName: string) {
+  enterTavern(partySize: string, longRest: string, partyName: string) {
     console.log(`The band of ${partySize} Adventurers, ${partyName}, have entered the tavern`);
   }
   tavernLocationList: TavernLocation[] = [
