@@ -27,8 +27,10 @@ import { TavernService } from '../tavern.service';
 export class HomeComponent {
   tavernLocationList: TavernLocation[] = [];
   tavernService: TavernService = inject(TavernService);
+  filteredTavernList: TavernLocation[] = [];
 
   constructor() {
     this.tavernLocationList = this.tavernService.getAllTavernLocations();
+    this.filteredTavernList = this.tavernLocationList;
   }
 }
