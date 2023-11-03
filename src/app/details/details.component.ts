@@ -23,7 +23,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
         </p>
       </section>
       <section class="tavern-features">
-        <h2 class="section-heading">About this tavern location</h2>
+        <h2 class="section-heading">About this tavern</h2>
         <ul>
           <li>
             <h4>{{ tavernLocation?.description }}</h4>
@@ -31,6 +31,30 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
           <li>Rooms available: {{ tavernLocation?.rooms }}</li>
           <li>Average Alignment of guests: {{ tavernLocation?.alignment }}</li>
         </ul>
+      </section>
+      <section class="tavern-travel">
+        <h2 class="section-heading">Reserve Rooms for your Party</h2>
+        <form [formGroup]="travelForm" (submit)="enterTavern()">
+          <label for="party-name">Party Name</label>
+          <input
+            type="text"
+            id="party-name"
+            name="party-name"
+            formControlName="partyName">
+          <label for="party-size">Party Size</label>
+          <input
+            type="number"
+            id="party-size"
+            name="party-size"
+            formControlName="partySize">
+          <label for="long-rest">Long Rest?</label>
+          <input
+            type="checkbox"
+            id="long-rest"
+            name="long-rest"
+            formControlName="longRest">
+          <button type="submit" class="primary">Time To Tavern Crawl</button>
+        </form>
       </section>
     </article>
   `,
