@@ -11,13 +11,14 @@ import { TavernService } from '../tavern.service';
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" />
-        <button class="primary" type="button">Search</button>
+        <input type="text" placeholder="Filter by city" #filter/>
+        <button class="primary" type="button" 
+        (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
     <section class="results">
       <app-tavern-location
-        *ngFor="let tavernLocation of tavernLocationList"
+        *ngFor="let tavernLocation of filteredTavernList"
         [tavernLocation]="tavernLocation"
       ></app-tavern-location>
     </section>
@@ -32,5 +33,16 @@ export class HomeComponent {
   constructor() {
     this.tavernLocationList = this.tavernService.getAllTavernLocations();
     this.filteredTavernList = this.tavernLocationList;
+  }
+
+  filterResults(text: string) {
+    if (!text){
+      this.filteredTavernList = this.tavernLocationList;
+    }
+
+    this.filteredTavernList = this.tavernLocationList.filter(
+      tavernLocation => 
+      tavernLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }
