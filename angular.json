@@ -10,6 +10,14 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://wloverde.github.io/AngularJS-TavernCrawl/",
+            "name": "wloverde",
+            "email": "w.andrew.loverde@gmail.com"
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
