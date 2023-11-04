@@ -31,11 +31,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/AngularJS-TavernCrawl/"
-              }
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -44,8 +40,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/AngularJS-TavernCrawl/",
-              
+              "baseHref": "/AngularJS-TavernCrawl/",             
               "budgets": [
                 {
                   "type": "initial",
