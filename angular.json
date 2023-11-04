@@ -13,6 +13,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
+            "repo": "https://github.com/wloverde/AngularJS-TavernCrawl",
             "baseHref": "https://wloverde.github.io/AngularJS-TavernCrawl/",
             "name": "wloverde",
             "email": "w.andrew.loverde@gmail.com"
@@ -39,6 +40,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/AngularJS-TavernCrawl/",
               "budgets": [
                 {
                   "type": "initial",
