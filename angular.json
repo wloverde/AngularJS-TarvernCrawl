@@ -33,7 +33,7 @@
               "src/favicon.ico",
               {
                 "glob": "**/*",
-                "input": "./",
+                "input": "src/assets",
                 "output": "/AngularJS-TavernCrawl/"
               }
             ],
